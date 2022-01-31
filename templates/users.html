@@ -1,0 +1,17 @@
+{% extends "data.html" %}
+{% block form%}
+    <form id = "form" action ="/readers/add" method="post"></form>
+{% endblock %}
+
+{%  block add %}
+    <tr>
+    <td><input type="text" name="name" form="form" placeholder="Imię"  required/></td>
+    <td><input type="text" name="surname" form="form" placeholder="Nazwisko"  required/></td>
+    <td><input type="tel" name="phone" form="form" placeholder="Telefon"  required/></td>
+    <td><input type="date" name="year" form="form"  required/></td>
+    </tr>
+{% endblock %}
+
+{% block button %}
+ <button type="submit" form="form">Dodaj</button>
+{% endblock %}

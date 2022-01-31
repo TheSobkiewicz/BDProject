@@ -1,0 +1,21 @@
+{% extends "data.html" %}
+{% block form%}
+    <form id = "form" action ="/fine/add" method="post"></form>
+{% endblock %}
+
+{%  block add %}
+    <tr>
+    <td><input type="text" name="name" form="form" placeholder="Nazwa"  required/></td>
+    <td><input type="number" name="fine" form="form" placeholder="0000"  required/></td>
+                        <td><select  name="user" form="form"  required>
+    {% for  role, id in users %}
+        <option value = "{{ id }}">{{ role }}</option>
+        {% endfor %}
+    </select>
+    </tr>
+{% endblock %}
+
+
+{% block button %}
+ <button type="submit" form="form">Dodaj</button>
+{% endblock %}

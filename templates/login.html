@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}
+    <title> Logowanie </title>
+    {% endblock %}
+</head>
+<body>
+    <header>
+        <h1 onclick="location.href='/'">System Obsługi Biblioteki</h1>
+        <nav>
+            <ul>
+                <li onclick="location.href='/authors'">Autorzy</li>
+                <li onclick="location.href='/books'">Książki</li>
+                <li onclick="location.href='/publishers'">Wydawnictwa</li>
+                <li onclick="location.href='/category'">Kategorie</li>
+                <li onclick="location.href='/readers'">Czytelnicy</li>
+                <li onclick="location.href='/workers'">Pracownicy</li>
+                <li onclick="location.href='/jobs'">Stanowiska</li>
+                <li onclick="location.href='/events'">Wypożyczenia</li>
+                <li onclick="location.href='/fine'">Kary</li>
+            </ul>
+        </nav>
+    </header>
+    <div style="text-align: center;">
+        {% block  div %}
+        <img src={{src}} />
+        {% endblock %}
+    </div>
+</body>
+</html>

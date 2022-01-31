@@ -1,0 +1,35 @@
+{% extends "data.html" %}
+{% block form%}
+    <form id = "form" action ="/books/add" method="post"></form>
+{% endblock %}
+
+{%  block add %}
+    <tr>
+    <td><input type="text" name="name" form="form" placeholder="Tytuł"  required/></td>
+        <td><input type="date" name="year" form="form"  required/></td>
+    <td><input type="text" name="description" form="form" placeholder="Opis"  required/></td>
+        <td><select  name="category" form="form"  required>
+    {% for  role, id in category %}
+        <option value = "{{ id }}">{{ role }}</option>
+        {% endfor %}
+    </select>
+    </td>
+        <td><select  name="author" form="form"  required>
+    {% for  role, id in author %}
+        <option value = "{{ id }}">{{ role }}</option>
+        {% endfor %}
+    </select>
+    </td>
+        <td><select  name="publisher" form="form"  required>
+    {% for  role, id in publisher %}
+        <option value = "{{ id }}">{{ role }}</option>
+        {% endfor %}
+    </select>
+    </td>
+    </tr>
+
+{% endblock %}
+
+{% block button %}
+ <button type="submit" form="form">Dodaj</button>
+{% endblock %}

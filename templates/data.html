@@ -1,0 +1,29 @@
+{% extends "login.html" %}
+{% block title %}
+    <title> {{ title }} </title>
+{% endblock %}
+{%block div %}
+<article style="text-align: center">
+<h2>{{title}}:</h2>
+{% block form%}
+{% endblock %}
+<table id="customers">
+<tr>
+ {%  for label in labels%}
+     <th>{{label}}</th>
+    {% endfor %}
+</tr>
+{% for one, id in  data %}
+<tr onclick="location.href= window.location.href +'/' +{{ id }} ">
+{% for i in one %}
+<td>{{i}}</td>
+{% endfor %}
+</tr>
+{% endfor %}
+{% block add%}
+{% endblock %}
+</table>
+{% block button%}
+{% endblock %}
+</article>
+{% endblock %}

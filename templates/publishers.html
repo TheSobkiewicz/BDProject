@@ -1,0 +1,14 @@
+{% extends "data.html" %}
+{% block form%}
+    <form id = "form" action ="/publishers/add" method="post"></form>
+{% endblock %}
+
+{%  block add %}
+    <tr>
+    <td><input type="text" name="name" form="form" placeholder="Nazwa Wydawnictwa"  required/></td>
+    </tr>
+{% endblock %}
+
+{% block button %}
+ <button type="submit" form="form">Dodaj</button>
+{% endblock %}
